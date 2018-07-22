@@ -21,4 +21,4 @@ def check_p(n):
     else:
         return False
 
-#print(check_p(91))
+print(check_p(91))
