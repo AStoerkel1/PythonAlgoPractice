@@ -3,7 +3,7 @@ this is supposed to perform a bunch of operations for matricies
 '''
 
 import numpy as np
-class leastSquares:
+class matrixOps:
 	def __init__(self, A, y):
 		self.A = A
 		self.y = y
@@ -22,13 +22,13 @@ A = np.array([[1, 2],[3, 4],[5, 6]])
 
 y = np.array([1,3])
 
-Atrans = leastSquares(A, y).transpose(A)
+Atrans = matrixOps(A, y).transpose(A)
 
 
 for r in Atrans:
 	print(r)
 
-multiple = leastSquares(A, y)
+multiple = matrixOps(A, y)
 
 ans = multiple.mult(multiple.transpose(A), A)
 
