@@ -1,3 +1,7 @@
+''' 
+this is supposed to perform a bunch of operations for matricies
+'''
+
 import numpy as np
 class leastSquares:
 	def __init__(self, A, y):
