@@ -33,7 +33,7 @@ def printMat(A):
 	for i in A:
 		print(i)
 
-
+#this is a test
 A = np.array([[1, 2],[3, 4],[5,6]])
 y = np.array([1,2])
 B = np.array([[1,2], [3,4]])
