@@ -29,11 +29,16 @@ class matrixOps:
 		ATA = self.multMat(Atrans, A)
 		return np.linalg.inv(ATA).dot(self.y)
 
+def printMat(A):
+	for i in A:
+		print(i)
+
+
 A = np.array([[1, 2],[3, 4],[5,6]])
 y = np.array([1,2])
 B = np.array([[1,2], [3,4]])
 
 BMat = matrixOps(A, B)
 yMat = matrixOps(A, y)
-print(BMat.multMat())
-print(yMat.multMat())
+printMat(BMat.multMat())
+printMat(yMat.multMat())
