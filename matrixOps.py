@@ -15,30 +15,28 @@ class matrixOps:
 		return [list(x) for x in zip(*self.A)]
 
 #multiply matricies (i found the mat*mat alg online but modified it for vectors)
-	def multMat(self):
+	def multMat(self, A, B):
 #B is a matrix
-		if type(self.B[0]) is (np.ndarray):
-			return [[sum(a * b for a, b in zip(A_row, B_col))for B_col in zip(*self.B)]for A_row in self.A]
+		if type(B[0]) is (np.ndarray):
+			return [[sum(a * b for a, b in zip(A_row, B_col))for B_col in zip(*B)]for A_row in A]
 #B is a vector
 		else:
 			return [sum(a * b for a, b in zip(A_row, self.B)) for A_row in self.A]
 
 #given a matrix and vector that are inconsistant, this will find the least squares solution
 	def leastSquares(self):
-		Atrans = self.transpose(self.A)
-		ATA = self.multMat(Atrans, A)
-		return np.linalg.inv(ATA).dot(self.y)
+		ATrans = self.transpose()
+		AtA = self.multMat(ATrans, self.A)
+		AtB = self.multMat(ATrans, self.B)
+		return np.linalg.solve(AtA, AtB)
 
 def printMat(A):
 	for i in A:
 		print(i)
 
 #this is a test
-A = np.array([[1, 2],[3, 4],[5,6]])
-y = np.array([1,2])
-B = np.array([[1,2], [3,4]])
+A = np.array([[1, 1],[1,2]])
+B = np.array([2,2])
 
 BMat = matrixOps(A, B)
-yMat = matrixOps(A, y)
-printMat(BMat.multMat())
-printMat(yMat.multMat())
+print(BMat.leastSquares())
