@@ -6,12 +6,13 @@ class bstNode:
 
 
 def printBST(root):
-    if root is not None:
-        if root.left is not None:
-            printBST(root.left)
-        elif root.right is not None:
-            printBST(root.right)
-        return print(root.data)
+    if root.left is not None:
+        printBST(root.left)
+    print(root.data)
+    if root.right is not None:
+        printBST(root.right)
+    
+    
 
 def bstInsert(root, data):
     if root is None:
@@ -25,6 +26,8 @@ def bstInsert(root, data):
 
 bst = bstNode(5)
 bstInsert(bst, 4)
+bstInsert(bst, 9)
+bstInsert(bst, 6)
 printBST(bst)
 
 
