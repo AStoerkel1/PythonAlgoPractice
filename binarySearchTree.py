@@ -16,19 +16,32 @@ def printBST(root):
 
 def bstInsert(root, data):
     if root is None:
-        return bstNode(data)
+        root = bstNode(data)
     elif root.data < data:
         root.right = bstInsert(root.right, data)
     elif root.data > data:
         root.left = bstInsert(root.left, data)
     return root
 
+def bstSearch(root, val):
+    def wrapper(root, val):
+        if root is None:
+            return ("X")
+        elif root.data < val:
+            return "R"+str(wrapper(root.right, val))
+        elif root.data > val:
+            return "L"+str(wrapper(root.left, val))
+        elif root.data == val:
+            return root.data
+    return [x for x in wrapper(root, val)]
 
 bst = bstNode(5)
 bstInsert(bst, 4)
 bstInsert(bst, 9)
 bstInsert(bst, 6)
 printBST(bst)
+print(bstSearch(bst, 7))
+print(bstSearch(bst, 6))
 
 
         
