@@ -1,6 +1,3 @@
-from locale import currency
-
-
 class bstNode:
     def __init__(self, data):
         self.left = None
