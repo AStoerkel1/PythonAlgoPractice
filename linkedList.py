@@ -24,6 +24,13 @@ class SLinkedList:
             curr = curr.nextval
         curr.nextval = Node(newdata)
 
+    def insmiddle(self, middleval, newdata):
+        curr = self.headval
+        while curr.dataval != middleval:
+            if curr.nextval == None:
+                return "middle val not found"
+            curr = curr.nextval
+
     def delend(self):
         curr = self.headval
         while curr.nextval.nextval is not None:
@@ -38,12 +45,11 @@ class SLinkedList:
         if curr.dataval == data:
             self.delhead()
         else:
-            while curr.nextval.dataval != data and curr.nextval.nextval != None:
+            while curr.nextval != None and curr.nextval.dataval != data:
                 curr = curr.nextval
-            if curr.nextval.nextval != None:
-                curr.nextval = curr.nextval.nextval
-            else:
-                print("data not found")
+            if curr.nextval == None:
+                return "value not found"
+            curr.nextval = curr.nextval.nextval
 
 
 list1 = SLinkedList()
@@ -58,4 +64,5 @@ list1.delend()
 list1.delhead()
 list1.deldata("Tue")
 list1.deldata(None)
+list1.deldata("Mon")
 list1.listprint()
