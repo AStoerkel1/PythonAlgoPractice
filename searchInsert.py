@@ -19,7 +19,5 @@ def searchInsert(nums: list, target: int) -> int:
     else:
         return mid
 
-        
-    
 
 print(searchInsert([1,2,3,4,6], 5))
