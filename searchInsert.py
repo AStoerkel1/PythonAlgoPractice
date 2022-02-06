@@ -1,3 +1,5 @@
+#does a binary search for the target
+#if the target is not found then it's proper index is returned
 def searchInsert(nums: list, target: int) -> int:
     if target < nums[0]: return 0
     if target > nums[-1]: return len(nums)

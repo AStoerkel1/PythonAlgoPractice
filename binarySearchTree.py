@@ -1,3 +1,4 @@
+#basic BST implimentation
 class bstNode:
     def __init__(self, data):
         self.left = None
