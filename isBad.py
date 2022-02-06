@@ -7,6 +7,7 @@ def isBadVersion(x) -> bool:
     return x > 5
 
 def firstBadVersion(n: int) -> int:
+    
     min = 1
     max = n
     mid = n//2
@@ -25,4 +26,4 @@ def firstBadVersion(n: int) -> int:
             min = mid + 1
 
 
-print(firstBadVersion(12))
+print(firstBadVersion(0))
