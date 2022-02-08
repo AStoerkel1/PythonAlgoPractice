@@ -1,5 +1,4 @@
 # The-Gun-Show
 Check out these pythons...
 
-this is for random python memes
-most of it is from a long time ago but matrixOps.py is recent
+this is all just practice, recent stuff is probably leet code solutions
