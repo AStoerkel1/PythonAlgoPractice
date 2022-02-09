@@ -1,4 +1,4 @@
 # PythonAlgoPractice
 Check out these pythons...
 
-this is all just practice, recent stuff is probably leet code solutions
+Recent commits are probably leetcode solutions, matrixOps.py was an attempt to put linear algebra into practice
