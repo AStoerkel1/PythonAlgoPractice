@@ -28,26 +28,31 @@ def addBinary(a: str, b: str) -> str:
             i-=1
         #augend is 1 and addend is 1
         else:
-            #while augend is still 1
-            while x[j] == '1':
-                #make the augend 0
-                x[j] = '0'
-                #if we made the highest order digit 0
-                if j == -(len(x)):
-                    #carry the one to the front
-                    x = ['1'] + x
-                    #advance the augend pointer
-                    j-=1
-                    #break the loop
-                    break
-                #advance the augend pointer inside the carry loop
-                j-=1
-            #broke out of the loop when augend digit is 0
-            #make 0 digit a 1
-            x[j] = '1'
-            #make sure augend pointer is reset to proper digit
-            j=i-1
+            x = carryTheOne(x, j)
+            #advance the augend pointer
+            j-=1
             #advance addend pointer
             i-=1
     return ''.join(x)
-print(addBinary('110', '0'))
+
+def carryTheOne(x: list, j: int):
+    #while augend is still 1
+    while x[j] == '1':
+        #make the augend 0
+        x[j] = '0'
+        #if we made the highest order digit 0
+        if j == -(len(x)):
+            #carry the one to the front
+            x = ['1'] + x
+            #advance the augend pointer
+            j-=1
+            #break the loop
+            return x
+        #advance the augend pointer inside the carry loop
+        j-=1
+    #broke out of the loop when augend digit is 0
+    #make 0 digit a 1
+    x[j] = '1'
+    return x
+
+print(addBinary('1101', '11'))#10000
