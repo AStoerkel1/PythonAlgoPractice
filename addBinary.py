@@ -15,7 +15,7 @@ def addBinary(a: str, b: str) -> str:
             i -= 1
             continue
         elif x[j] == '0':
-            x[j] == '1'
+            x[j] = '1'
             j-=1
             i-=1
             continue
@@ -24,10 +24,12 @@ def addBinary(a: str, b: str) -> str:
                 x[j] = '0'
                 if j == -(len(x)):
                     x = ['1'] + x
+                    j-=1
                     break
                 j-=1
+                
             x[j] = '1'
             j=i-1
             i-=1
     return ''.join(x)
-print(addBinary('1101', '11'))
+print(addBinary('110', '111'))
